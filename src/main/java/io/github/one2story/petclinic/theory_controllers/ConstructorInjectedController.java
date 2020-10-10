@@ -1,6 +1,6 @@
-package io.github.one2story.petclinic.controllers;
+package io.github.one2story.petclinic.theory_controllers;
 
-import io.github.one2story.petclinic.services.GreetingService;
+import io.github.one2story.petclinic.theory_services.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 

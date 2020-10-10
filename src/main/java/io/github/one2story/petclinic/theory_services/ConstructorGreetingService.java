@@ -1,4 +1,4 @@
-package io.github.one2story.petclinic.services;
+package io.github.one2story.petclinic.theory_services;
 
 import org.springframework.stereotype.Service;
 

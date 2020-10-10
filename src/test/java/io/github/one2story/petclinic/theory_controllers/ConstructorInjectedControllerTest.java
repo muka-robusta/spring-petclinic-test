@@ -1,6 +1,6 @@
-package io.github.one2story.petclinic.controllers;
+package io.github.one2story.petclinic.theory_controllers;
 
-import io.github.one2story.petclinic.services.ConstructorGreetingService;
+import io.github.one2story.petclinic.theory_services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
