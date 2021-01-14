@@ -9,7 +9,7 @@ public class PetclinicApplication {
     public static void main(String[] args) {
         SpringApplication.run(PetclinicApplication.class, args);
         /*
-        final ApplicationContext context = SpringApplication.run(PetclinicApplication.class, args);
+        final ApplicationContext context = SpringApplication.run(io.github.one2story.petclinic.PetclinicApplication.class, args);
         final MyController myController = (MyController) context.getBean("myController");
 
         System.out.println("------- i18");
