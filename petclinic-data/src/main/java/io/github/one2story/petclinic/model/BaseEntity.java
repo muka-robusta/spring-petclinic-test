@@ -3,9 +3,14 @@ package io.github.one2story.petclinic.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class PetType extends BaseEntity {
+public class BaseEntity implements Serializable {
 
-    private String name;
+
+    private long id;
+
+
 }
