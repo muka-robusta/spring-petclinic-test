@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <meta charset="UTF-8">
     <title th:text="Owners">Owners list</title>
 </head>
 <body>
 <!--/*@thymesVar id="owner" type="io.github.one2story.petclinic.model.Owner"*/-->
-<h1 th:text="'Owners'">Owners List</h1>
+<h2 th:text="'Owners'">Owners List</h2>
 
-<table>
+<table class="table table-striped">
     <thead>
     <tr>
-        <th>Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th width="150px">Id</th>
+        <th width="200px">First Name</th>
+        <th width="200px">Last Name</th>
     </tr>
     </thead>
     <tbody>
