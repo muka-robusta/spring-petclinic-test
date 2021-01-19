@@ -2,10 +2,11 @@ package io.github.one2story.petclinic.services.map;
 
 import io.github.one2story.petclinic.model.Vet;
 import io.github.one2story.petclinic.services.CrudService;
+import io.github.one2story.petclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
