@@ -1,11 +1,12 @@
 package io.github.one2story.petclinic.services.map;
 
 import io.github.one2story.petclinic.model.Vet;
-import io.github.one2story.petclinic.services.CrudService;
 import io.github.one2story.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
