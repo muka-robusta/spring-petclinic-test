@@ -19,7 +19,8 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         if (object == null)
             throw new RuntimeException("Object can not be null");
 
-        object.setId(getNextId());
+        if (object.getId() == null)
+            object.setId(getNextId());
 
         map.put(object.getId(), object);
 
