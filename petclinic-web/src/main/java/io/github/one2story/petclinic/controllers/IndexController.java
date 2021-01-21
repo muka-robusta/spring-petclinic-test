@@ -12,4 +12,9 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/oops")
+    public String notFoundPage() {
+        return "pageAbsence";
+    }
+
 }
