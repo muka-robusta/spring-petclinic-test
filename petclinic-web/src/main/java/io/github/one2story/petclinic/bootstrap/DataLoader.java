@@ -1,10 +1,7 @@
 package io.github.one2story.petclinic.bootstrap;
 
 import io.github.one2story.petclinic.model.*;
-import io.github.one2story.petclinic.services.OwnerService;
-import io.github.one2story.petclinic.services.PetTypeService;
-import io.github.one2story.petclinic.services.SpecialtyService;
-import io.github.one2story.petclinic.services.VetService;
+import io.github.one2story.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -78,7 +77,6 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("34, Pyatnitska street");
         owner2.setCity("Chernihiv, Ukraine");
         owner2.setTelephone("+380772223355");
-        ownerService.save(owner2);
 
         Pet pet2 = new Pet();
         pet2.setName("Fiona");
@@ -86,6 +84,15 @@ public class DataLoader implements CommandLineRunner {
         pet2.setPetType(savedDogType);
         pet2.setBirthDate(LocalDate.now());
         owner2.getPets().add(pet2);
+
+        ownerService.save(owner2);
+
+        Visit visit1 = new Visit();
+        visit1.setPet(pet2);
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("Cat without leg");
+
+        visitService.save(visit1);
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Ilya");
