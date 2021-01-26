@@ -5,11 +5,13 @@ import io.github.one2story.petclinic.model.Pet;
 import io.github.one2story.petclinic.services.OwnerService;
 import io.github.one2story.petclinic.services.PetService;
 import io.github.one2story.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

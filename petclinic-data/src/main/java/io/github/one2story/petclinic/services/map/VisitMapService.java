@@ -3,11 +3,13 @@ package io.github.one2story.petclinic.services.map;
 import io.github.one2story.petclinic.model.Visit;
 import io.github.one2story.petclinic.services.PetService;
 import io.github.one2story.petclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
